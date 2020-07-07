@@ -1,4 +1,5 @@
 import streams from '../api/streams'
+import history from '../history'
 
 import * as types from './types'
 
@@ -24,6 +25,7 @@ export const createStream = (formValues) => async (dispatch, getState) => {
     type: types.CREATE_STREAM,
     payload: response.data
   })
+  history.push('/')
 }
 
 export const fetchStreams = () => async (dispatch) => {
